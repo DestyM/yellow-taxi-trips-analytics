@@ -1,8 +1,9 @@
 # 🏆 yellow-taxi-trips-analytics
 
-This involves designing and deploying a complete ELT pipeline on Google Cloud Platform, automating data processing and harnessing the power of the cloud for analysis and Machine Learning.
+This involves designing and deploying a complete ELT pipeline on Google Cloud Platform, automating data processing and harnessing the power of the cloud for analysis.
 
-## ✨ Features
+## ☁️ Architecture
+![Home view](./archi_elt.png)
 
 ## 🛠️ Technical environement
 
@@ -45,6 +46,10 @@ In your terminal,
 ```sh
 git clone https://github.com/Desy16/yellow-taxi-trips-analytics.git
 cd yellow-taxi-trips-analytics.git
+
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ## 👨‍💻​ Author
