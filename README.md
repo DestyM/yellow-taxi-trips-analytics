@@ -1,56 +1,68 @@
-# 🏆 yellow-taxi-trips-analytics
+# 🏆 Yellow Taxi Trips Analytics
 
-This involves designing and deploying a complete ELT pipeline on Google Cloud Platform, automating data processing and harnessing the power of the cloud for analysis.
+This project involves designing and deploying a complete ELT pipeline on Google Cloud Platform, automating data ingestion, storage, and transformation to power cloud-based analytics.
 
-## ☁️ Architecture
-![Home view](./archi_elt.png)
+## 🧱 Architecture
+![Architecture pipeline](./archi_elt.png)
 
-## 🛠️ Technical environement
+### Steps in the pipeline
+1. **Extraction**  
+   ↳ Downloads the parquet files from a website and places them in the GCS bucket.
 
-- GCP (Google Cloud Platform)
+2. **Upload**  
+   ↳ Triggers the automatic upload of files to BigQuery in a **raw table**.
 
-The Google Cloud Platform is the platform that brings together Google's various cloud services.
-It comprises a family of products, each with a web interface. For more details, click [here](https://cloud.google.com/docs/overview?hl=fr)
+3. **Transform**  
+   ↳ Applies SQL or Python processing to create a **transformed table**.
 
-- BigQuery
+## 🛠️ Technology used
 
-It is a very large-scale data warehouse. [More](https://cloud.google.com/bigquery?hl=fr)
+| Tool / Service | Role
+|-----------------------|----------------------------------|
+| **Google Cloud Platform (GCP)** - Cloud platform used to host services
+| **Airflow (via Google Composer)**| Orchestration of ETL tasks |
+| **Google Cloud Storage (GCS)** | Storage of raw files (staging area) |
+| **BigQuery** | Data warehousing and transformations |
+| **Python / SQL** scripts and transformation queries
+| **Parquet** | Source file format |
 
-- Cloud Shell
-
-It's an environment that lets you code or use a terminal directly in your browser. [More](https://cloud.google.com/shell?hl=fr)
-
-- Cloud Storage
-
-It's an online file storage system. [More](https://cloud.google.com/storage?hl=fr)
-
-- Cloud composer
-
-It's a fully managed workflow orchestration service built on Apache Airflow. [More](https://cloud.google.com/composer?hl=fr)
-
-- SQL
-
-SQL (Structured Query Language) is a popular query language frequently used in all types of applications. [More](https://sql.sh/)
-
-- Python
-
-Python is a general-purpose programming language created in 1989 by Guido van Rossum. [More](https://www.python.org/)
-
-
-<!--## *️⃣ Project structure-->
 
 ## 💻​ Environment setup
-- Get the project and launch the program
+
+1. Clone the repository
 
 In your terminal,
 ```sh
 git clone https://github.com/Desy16/yellow-taxi-trips-analytics.git
-cd yellow-taxi-trips-analytics.git
+cd yellow-taxi-trips-analytics
+```
 
+2. Create and activate a virtual environment
+```sh
 python3 -m venv .venv
 source .venv/bin/activate
+```
+
+3. Install dependencies
+```sh
 pip install -r requirements.txt
 ```
 
+## 🧰​ Dependencies
+```txt
+google==3.0.0
+google-api-core==2.24.1
+google-auth==2.38.0
+google-cloud==0.34.0
+google-cloud-bigquery==3.29.0
+google-cloud-core==2.4.1
+google-cloud-storage==3.0.0
+numpy==2.2.2
+pandas==2.2.3
+py4j==0.10.9.7
+pyarrow==19.0.0
+scikit-learn==1.6.1
+```
+
 ## 👨‍💻​ Author
-[Desty MPASSI MATONDO](https://github.com/Desy16/yellow-taxi-trips-analytics)
+[Desty MPASSI MATONDO](https://github.com/DestyM/)
